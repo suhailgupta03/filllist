@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+        <script type="application/javascript" src="lib/angular/angular.min.js"></script>
+        <script type="application/javascript" src="lib/angular/angular-route.min.js"></script>
+        <title>Filllist</title>
+    </head>
+    <style>
+    .item-list-container {
+    max-height: 400px;
+    overflow: auto;
+}
+        .table-container {
+    display: table-row;
+}
+.table-container > div {
+    display: table-cell;
+        padding: 5px 15px;
+    width: 140px;
+    border: 1px solid #cdcdcd;
+}        
+    </style>
+    <body data-ng-app="filllist">
+        <div class="container-fluid">
+            <div data-ng-view></div>
+        </div>
+        <script type="application/javascript" src="js/app.js"></script>
+    </body>
+</html>

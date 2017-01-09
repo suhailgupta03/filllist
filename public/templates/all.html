@@ -1,0 +1,19 @@
+<div>
+    <h2>ALL</h2>
+    <div>
+        <div class="table-container">
+            <div>Product ID</div>
+            <div>Status</div>
+            <div>Position</div>
+        </div>
+    </div>
+    <div class="item-list-container">
+        <div data-ng-repeat="item in itemlist">
+            <div class="table-container">
+                <div class="product-id" data-ng-bind="item.product_id"></div>
+                <div class="product-status" data-ng-bind="item.status"></div>
+                <div class="product-position" data-ng-bind="item.position"></div>
+            </div>
+        </div>
+    </div>
+</div>
