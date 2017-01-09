@@ -7,6 +7,8 @@ var app = express();
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+const HTTP_PORT = 8081;
+
 MPipe.openConnection((err,res)=>{
    if(err)
        console.log('Failed to open connection to MySQL');
@@ -39,7 +41,7 @@ if(map) {
     });
 }
 
-var server = app.listen(8081,()=>{
+var server = app.listen(HTTP_PORT,()=>{
                 console.log(`Server started at port ${server.address().port}`);
             });
 
