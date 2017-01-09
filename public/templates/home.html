@@ -1,8 +1,10 @@
 <div>
     <h2>HOME</h2>
+    <br />
     <a href="#!/showAll">Show All</a>
     <br/>
-    <a href="#!/add">Add New</a>
+    <a href="#!/add">Add New Line</a>
+    <br /><br />
     <div>
         <div class="table-container">
             <div>Product ID</div>
@@ -20,7 +22,7 @@
         </div>
     </div>
     <div>
-        <h3>Search Product</h3>
+        <h3>Search Product Position</h3>
         <div class="form form-inline">
             <div class="form-group">
                 <label class="control-label col-xs-5">Enter Product Id</label>
@@ -31,7 +33,7 @@
             </div>
         </div>
         <div data-ng-if="searchProductStatus != ''">
-            <label>Current Status of product :</label><span data-ng-bind="searchProductStatus"></span>
+            <label>Current position of product :</label><span data-ng-bind="searchProductStatus"></span>
         </div>
     </div>
 </div>

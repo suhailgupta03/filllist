@@ -37,6 +37,13 @@
                         
                     });
                 },
+                getInstrumentPosition: function (instrumentId) {
+                    return $http.get('/instrument/position/' + instrumentId, {}).then(function (response) {
+                        return response.data;
+                    }, function (error) {
+                        
+                    });
+                },
                 addItem: function (inputData) {
                     return $http.post('/addItem/', {data: inputData}, {}).then(function(response){
                         return response.data;
@@ -72,7 +79,7 @@
             $scope.searchProductId = '';
             $scope.searchProductStatus = '';
             $scope.getProductStatus = function () {
-                dataService.getInstrumentData($scope.searchProductId).then(function(response){
+                dataService.getInstrumentPosition($scope.searchProductId).then(function(response){
                     if(response != 404) 
                         $scope.searchProductStatus = response;
                     else {
@@ -82,11 +89,16 @@
             }
             
         }])
-        .controller('addCtrl', ['$scope', 'dataService', function ($scope, dataService) {
+        .controller('addItemCtrl', ['$scope', 'dataService', function ($scope, dataService) {
             $scope.message = '';
-            dataService.addItem(function (response) {
-                $scope.message = 'Item added successfully';
-            });
+            $scope.addProductDetail = function(){
+                dataService.addItem($scope.addItemDetail).then(function (response) {
+                    if(response.error)
+                        $scope.message = response.error;
+                    else(response.msg)
+                        $scope.message = response.msg;
+                });
+            };
         }])
         .controller('showAllCtrl', ['$scope', 'dataService', function ($scope, dataService) {
             dataService.autoRefreshData(function (response) {
